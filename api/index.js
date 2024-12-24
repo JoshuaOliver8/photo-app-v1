@@ -94,7 +94,7 @@ app.post('/upload', upload.single('file'), async (req, res, next) => {
     }
 })
 
-const unknownEndpoint = (req, response) => {
+const unknownEndpoint = (req, res) => {
     res.status(404).send({ error: "unknown endpoint" })
 }
 
