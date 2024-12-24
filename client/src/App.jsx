@@ -177,6 +177,16 @@ const App = () => {
     setNextCursor(null)
   }
 
+  const changePasswordVisibility = () => {
+    const passwordInput = document.getElementById("password-input")
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text"
+    } else {
+      passwordInput.type = "password"
+    }
+  }
+
   const handleFileUpload = (event) => {
     const file = event.target.files[0]
     const reader = new FileReader()
@@ -306,12 +316,26 @@ const App = () => {
               placeholder="Username"
             ></input>
             <input
+              id="password-input"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
               type="password"
               required
               placeholder="Password"
             ></input>
+            <div id="password-toggle-space">
+              <label 
+                id="password-toggle-label"
+                for="password-toggle"
+              >
+                Show/hide password
+              </label>
+              <input
+                id="password-toggle"
+                type="checkbox"
+                onClick={changePasswordVisibility}
+              />
+            </div>
             <button type="submit">Log In</button>
           </form>
         </div>

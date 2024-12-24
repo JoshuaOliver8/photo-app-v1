@@ -196,6 +196,30 @@ dialog::backdrop {
     width: 80%;
 }
 
+#password-toggle-space {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 3fr 1fr;
+    font-family: sans-serif;
+    margin: auto 25% auto 25%;
+    width: 100px;
+}
+
+#password-toggle-label {
+    font-size: 14px;
+    width: 75px;
+}
+
+#password-toggle {
+    display: inline;
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    transform: scale(2);
+    padding: 10px;
+}
+
 .search-form {
     margin: 1rem 0 1rem 0;
     display: grid;
