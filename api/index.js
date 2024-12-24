@@ -11,7 +11,7 @@ const axios = require('axios')
 const mongoose = require('mongoose')
 const loginRouter = require('./controllers/login')
 const tagsRouter = require('./controllers/tags')
-const usersRouter = require('./controllers/users')
+//const usersRouter = require('./controllers/users')
 
 const app = express()
 

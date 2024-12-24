@@ -272,8 +272,13 @@ const App = () => {
     }
   }
 
+  const clearTags = () => {
+    setTagList([])
+  }
+
   const handleUpload = async (event) => {
     event.preventDefault()
+    console.log(newImage)
 
     if (tagList.length === 0) {
       await uploadImage(newImage, ["nobody-here"])
@@ -523,6 +528,9 @@ const App = () => {
                 readOnly
                 value={tagList.map(t => t.tagName)}
               ></textarea>
+              <button id="clear-tags" type="button" onClick={clearTags}>
+                Clear tags
+              </button>
             </div>
             <div id="upload-error">
                 {errorMessage}
