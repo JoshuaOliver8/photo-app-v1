@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "dev": "NODE_ENV=development nodemon index.js"
+    "dev": "NODE_ENV=development nodemon index.js",
+    "build:ui": "rm -rf dist && cd ../client && npm run build && cp -r dist ../api",
+    "deploy:full": "npm run build:ui && cd ../ && git add . && git commit -m uibuild && git push"
   },
   "author": "",
   "license": "ISC",

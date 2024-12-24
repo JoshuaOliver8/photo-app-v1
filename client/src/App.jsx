@@ -5,6 +5,7 @@ import tagsService from './services/tags'
 import Image from './components/Image';
 import fileTypeChecker from "file-type-checker"
 import "./index.css"
+import Cookies from "js-cookie"
 
 const App = () => {
   const [username, setUsername] = useState('')
@@ -25,7 +26,8 @@ const App = () => {
   const [tag, setTag] = useState("")
 
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    //const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    const loggedUserJSON = Cookies.get('loggedUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
@@ -149,9 +151,13 @@ const App = () => {
         username, password,
       })
 
+      /*
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(user)
       )
+      */
+      Cookies.set('loggedUser', JSON.stringify(user))
+
       setUser(user)
       setUsername('')
       setPassword('')
