@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = `${import.meta.env.VITE_API_URL}/api/tags`
+const baseUrl = 'http://localhost:3001/api/tags'
 
 const getTags = async () => {
     const response = await axios.get(baseUrl)
