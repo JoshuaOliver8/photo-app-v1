@@ -45,7 +45,10 @@ const arrayOfAllowedFiles = [
 
 app.use('/api/login', loginRouter)
 app.use('/api/tags', tagsRouter)
+/*
+FOR TESTING
 app.use('/api/signup', usersRouter)
+*/
 
 app.get('/photos', async (req, res, next) => {
     const response = await axios.get(BASE_URL + '/resources/image', {
