@@ -1,5 +1,3 @@
-const API_URL = "http://localhost:3001"
-
 export const getImages = async (nextCursor) => {
     const params = new URLSearchParams()
 
@@ -7,7 +5,7 @@ export const getImages = async (nextCursor) => {
         params.append('next_cursor', nextCursor)
     }
 
-    const response = await fetch(`${API_URL}/photos?${params}`)
+    const response = await fetch(`/photos?${params}`)
     const responseJson = await response.json()
     
     return responseJson
@@ -23,7 +21,7 @@ export const searchImages = async (searchValue, nextCursor) => {
         params.append('next_cursor', nextCursor)
     }
 
-    const response = await fetch(`${API_URL}/search?${params}`)
+    const response = await fetch(`/search?${params}`)
     const responseJson = await response.json()
 
     return responseJson
@@ -37,7 +35,7 @@ export const uploadImage = async (imageFile, tags) => {
     const tagList = tags.toString()
     formData.append("tags", tagList)
 
-    const response = await fetch(`${API_URL}/upload`, {
+    const response = await fetch('/upload', {
         method: 'POST',
         body: formData
     })
