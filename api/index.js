@@ -11,6 +11,7 @@ const axios = require('axios')
 const mongoose = require('mongoose')
 const loginRouter = require('./controllers/login')
 const tagsRouter = require('./controllers/tags')
+const usersRouter = require('./controllers/users')
 
 const app = express()
 
@@ -44,6 +45,7 @@ const arrayOfAllowedFiles = [
 
 app.use('/api/login', loginRouter)
 app.use('/api/tags', tagsRouter)
+app.use('/api/signup', usersRouter)
 
 app.get('/photos', async (req, res, next) => {
     const response = await axios.get(BASE_URL + '/resources/image', {

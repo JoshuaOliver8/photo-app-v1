@@ -4,7 +4,7 @@ const Image = ({ image }) => {
     return (
         <a href={image.secure_url}>
            <img
-                src={image.url}
+                src={image.secure_url}
                 alt={image.public_id} 
             ></img> 
         </a>
