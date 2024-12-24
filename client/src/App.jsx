@@ -170,7 +170,8 @@ const App = () => {
   }
 
   const handleLogout = () => {
-    window.localStorage.clear()
+    //window.localStorage.clear()
+    Cookies.remove('loggedUser')
     setUser(null)
     setImageList([])
     setNextCursor(null)
