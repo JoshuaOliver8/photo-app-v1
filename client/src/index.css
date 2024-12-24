@@ -230,6 +230,7 @@ dialog::backdrop {
     margin: 20px 10px;
     padding: 20px 25px;
     font-size: 30px;
+    color: #000;
 }
 
 #expanded-header-toggle {
@@ -245,6 +246,10 @@ dialog::backdrop {
 .login-form input, .login-form button {
     width: 90%;
     margin: auto;
+}
+
+.search-form button {
+    font-weight: normal;
 }
 
 .search-form button[type="button"] {
