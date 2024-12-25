@@ -32,7 +32,7 @@ export const uploadImage = async (imageFile, tags) => {
 
     formData.append("file", imageFile)
 
-    const tagList = tags.toString()
+    const tagList = tags.map(tag => tag.tagName)
     formData.append("tags", tagList)
 
     const response = await fetch('/upload', {

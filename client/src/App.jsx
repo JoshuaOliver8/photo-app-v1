@@ -278,7 +278,6 @@ const App = () => {
 
   const handleUpload = async (event) => {
     event.preventDefault()
-    console.log(newImage)
 
     if (tagList.length === 0) {
       await uploadImage(newImage, ["nobody-here"])
